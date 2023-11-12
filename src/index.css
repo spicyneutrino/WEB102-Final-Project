@@ -1,0 +1,11 @@
+*{
+  margin: none;
+  padding: none;
+  box-sizing: border-box;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
