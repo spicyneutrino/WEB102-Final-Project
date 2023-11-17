@@ -7,13 +7,13 @@ const Header = () => {
             <nav>
                 <div className="brand-name">TALK4UM</div>
                 <form>
-                <input type="text" placeholder="Search"></input>
-                <button>🔍</button>
+                    <input type="text" placeholder="Search"></input>
+                    <button>🔍</button>
                 </form>
-                
+
                 <div className="nav-links">
-                    <div>Home</div>
-                    <NavLink to = "/create" >Create New Post</NavLink>
+                    <NavLink to="/" >Home</NavLink>
+                    <NavLink to="/create" >Create New Post</NavLink>
                 </div>
             </nav>
         </>

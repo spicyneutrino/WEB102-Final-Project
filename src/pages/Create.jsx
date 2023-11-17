@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import supabase from "../config/supaBaseClient"
+import { Navigate } from "react-router-dom"
 
 const Create = () => {
 
@@ -38,6 +39,7 @@ const Create = () => {
         if (data) {
             setFormError(null)
         }
+        Navigate("/")
 
     }
 

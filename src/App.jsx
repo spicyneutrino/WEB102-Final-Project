@@ -10,6 +10,7 @@ import {
 //import pages
 import Home from "./pages/Home"
 import Create from "./pages/Create"
+import PostDetail from "./pages/PostDetail";
 
 
 
@@ -35,6 +36,7 @@ function Root() {
       <Route path="/create/" element={<Create />} />
       {/* <Route path="/blog/*" element={<BlogApp />} />
       <Route path="/users/*" element={<UserApp />} /> */}
+      <Route path="/info/:id" element={<PostDetail />} />
     </Routes>
   );
 }
