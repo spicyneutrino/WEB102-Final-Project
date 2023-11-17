@@ -10,6 +10,7 @@ import {
 //import pages
 import Home from "./pages/Home"
 import Create from "./pages/Create"
+import Update from "./pages/Update"
 import PostDetail from "./pages/PostDetail";
 
 
@@ -37,6 +38,7 @@ function Root() {
       {/* <Route path="/blog/*" element={<BlogApp />} />
       <Route path="/users/*" element={<UserApp />} /> */}
       <Route path="/info/:id" element={<PostDetail />} />
+      <Route path="/update/:id" element={<Update />} />
     </Routes>
   );
 }

@@ -72,6 +72,7 @@ const PostDetail = () => {
                     </div>
                 </div>
             )}
+            <button onClick={() => { navigate(`/update/${id}`) }} className="updatePost">Update Post</button>
             <button onClick={handleDelete} className="delete-post">Delete Post</button>
             <button onClick={() => { navigate("/") }}>Return Home</button>
 
