@@ -2,6 +2,10 @@
 
 const PostBlock = ({ post }) => {
 
+    if (!post) {
+        return null
+    }
+
     return (
         <div className="post-container">
             <div className="post-block-data">

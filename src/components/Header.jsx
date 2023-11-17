@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 
 const Header = () => {
 
@@ -12,7 +13,7 @@ const Header = () => {
                 
                 <div className="nav-links">
                     <div>Home</div>
-                    <div>Create New Post</div>
+                    <NavLink to = "/create" >Create New Post</NavLink>
                 </div>
             </nav>
         </>

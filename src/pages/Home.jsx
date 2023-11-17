@@ -7,6 +7,8 @@ import supabase from '../config/supaBaseClient';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+//main component
+
 const Home = () => {
     //states
     const [posts, setPosts] = useState(null)
@@ -17,27 +19,27 @@ const Home = () => {
             const { data, error } = await supabase
                 .from("posts")
                 .select()
-            
+
             console.log(data)
             console.log(error)
-            if (error){
+            if (error) {
                 console.log(error)
                 setFetchError(error)
                 setPosts(null)
             }
-            if (data){
+            if (data) {
                 console.log(data)
                 setFetchError(null)
                 setPosts(data)
             }
         }
         fetchData()
-    },[])
+    }, [])
 
     return (
         <div>
-            <Header posts = {posts} />
-            <Body posts = {posts}/>
+            <Header posts={posts} />
+            <Body posts={posts} />
         </div>
     )
 }
