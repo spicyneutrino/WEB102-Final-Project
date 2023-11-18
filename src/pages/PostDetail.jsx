@@ -8,6 +8,47 @@ const PostDetail = () => {
     const [fetchError, setFetchError] = useState(null)
     const [post, setPost] = useState(null)
     const navigate = useNavigate()
+    const [reply, setReply] = useState("")
+
+    const handleUpvotes = async () => {
+
+        const { data, error } = await supabase
+            .from("posts")
+            .update({
+                "upvotes": post.upvotes + 1
+            })
+            .eq("postID", id)
+            .select()
+
+        setPost((prevPost) => ({
+            ...prevPost,
+            upvotes: post.upvotes + 1
+        })
+        )
+    }
+
+    const handleAddReply = async (e) => {
+        e.preventDefault()
+        if (!reply.trim() || reply === "") {
+            alert("Reply cannot be empty")
+            return
+        }
+
+        const { data, error } = await supabase
+            .from("posts")
+            .update({
+                "replies": [...post.replies, reply]
+            })
+            .eq("postID", id)
+            .select()
+
+        setPost((prevPost) => {
+            return ({
+                ...prevPost,
+                "replies": [...prevPost.replies, reply]
+            })
+        })
+    }
 
     const handleDelete = async () => {
         const { data, error } = await supabase
@@ -54,27 +95,55 @@ const PostDetail = () => {
             {fetchError && (
                 <div className="error-message">{fetchError}</div>
             )}
+
             {post && (
-                <div className="postDetailTopRow">
-                    <div>
-                        <h1>{post.postTitle}</h1>
-                        <h2>{post.userName}</h2>
+
+                <div className="page">
+                    <div className="postDetailTopRow">
                         <div>
-                            <div>Post ID: {post.postID}</div>
-                            <div>Created at: {post.createTime}</div>
+                            <h1>{post.postTitle}</h1>
+                            <h2>{post.userName}</h2>
+                            <div>
+                                <div>Post ID: {post.postID}</div>
+                                <div>Created at: {post.createTime}</div>
+                                <div>{`${post.upvotes} upvotes`}</div>
+                            </div>
                         </div>
+                        {post?.images && (
+                            <img src={post.images} />
+                        )}
                     </div>
-                    {post?.images && (
-                        <img src={post.images} />
-                    )}
+
+                    <div className="buttonRow">
+                        <button onClick={handleUpvotes}>⬆️</button>
+                        <button onClick={() => { navigate(`/update/${id}`) }} className="updatePost">Update Post</button>
+                        <button onClick={handleDelete} className="delete-post">Delete Post</button>
+                        <button onClick={() => { navigate("/") }}>Return Home</button>
+                    </div>
+
                     <div className="postDetailBottomRow">
                         <p>{post.text}</p>
                     </div>
+
+                    <div className="addReplyFormDiv">
+                        <form onSubmit={handleAddReply}>
+                            <input type="text" placeholder="Enter your reply" value={reply} onChange={(e) => { setReply(e.target.value) }} />
+                            <button>Reply</button>
+                        </form>
+                    </div>
+
+                    <div className="postRepliesContainer">
+                        {(!post.replies) && (
+                            "No Replies 😓"
+                        )}
+                        {(post.replies) && (post.replies.map((reply, index) => {
+                            return <div key={index} className="postReplies">{reply}</div>
+                        }))}
+                    </div>
+
                 </div>
             )}
-            <button onClick={() => { navigate(`/update/${id}`) }} className="updatePost">Update Post</button>
-            <button onClick={handleDelete} className="delete-post">Delete Post</button>
-            <button onClick={() => { navigate("/") }}>Return Home</button>
+
 
         </div>
     )

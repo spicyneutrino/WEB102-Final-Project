@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 const Home = () => {
     //states
     const [posts, setPosts] = useState(null)
+    const [copyPosts, setCopyPosts] = useState(null)
     const [fetchError, setFetchError] = useState(null)
 
     useEffect(() => {
@@ -31,6 +32,7 @@ const Home = () => {
                 console.log(data)
                 setFetchError(null)
                 setPosts(data)
+                setCopyPosts(data)
             }
         }
         fetchData()
@@ -38,8 +40,8 @@ const Home = () => {
 
     return (
         <div>
-            <Header posts={posts} />
-            <Body posts={posts} />
+            <Header posts={posts} copyPosts = {copyPosts} setPosts = {setPosts} setCopyPosts = {setCopyPosts}/>
+            <Body posts={copyPosts} />
         </div>
     )
 }

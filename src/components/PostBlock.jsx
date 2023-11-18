@@ -13,9 +13,15 @@ const PostBlock = ({ post }) => {
                 <div className="createTime">{post.createTime}</div>
                 <div className="userName">{post.userName}</div>
             </div>
-            <div className="post-block-title">
-                {post.postTitle}
+            <div className="upvoteTitle">
+                <div className="upvotes">
+                    {`${post.upvotes} votes`}
+                </div>
+                <div className="post-block-title">
+                    {post.postTitle}
+                </div>
             </div>
+
         </div>
     )
 }
