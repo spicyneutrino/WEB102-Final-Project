@@ -85,7 +85,10 @@ const Update = () => {
 
                 <p>{formError}</p>
 
-                <button>Add Post</button>
+                <div className="button-row">
+                    <button>Update Post</button>
+                    <button onClick={() => { navigate("/") }}>Return Home</button>
+                </div>
             </form>
         </div>
     )

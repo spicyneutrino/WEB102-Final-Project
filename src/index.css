@@ -103,17 +103,18 @@ a:hover {
 }
 
 /* post detail page  */
-.postDetailPage{
+.postDetailPage {
   display: flex;
   flex-direction: column;
   width: 99w;
 }
-.postDetailTopRow{
+
+.postDetailTopRow {
   display: flex;
   justify-content: space-between;
 }
 
-.postDetailTopRow img{
+.postDetailTopRow img {
   display: flex;
   width: 400px;
   height: 200px;
@@ -121,7 +122,7 @@ a:hover {
   object-fit: contain;
 }
 
-.buttonRow{
+.buttonRow {
   display: flex;
   /* border: 1px solid #000; */
   gap: 10px;
@@ -133,11 +134,11 @@ a:hover {
   align-items: center;
 }
 
-.buttonRow > button {
+.buttonRow>button {
   height: 35px;
 }
 
-.BtnEmoji{
+.BtnEmoji {
   width: auto;
   font-size: 25px;
   background: none;
@@ -145,30 +146,30 @@ a:hover {
   text-align: center;
 }
 
-.postDetailBottomRow{
+.postDetailBottomRow {
   width: 100vw;
   padding: 20px;
 }
 
-.addReplyFormDiv form input{
+.addReplyFormDiv form input {
   width: 90vw;
   height: 60px;
 }
 
 
-.addReplyFormDiv form button{
+.addReplyFormDiv form button {
   width: 5vw;
   min-width: 50px;
   height: 60px;
 }
 
-.comment-heading{
+.comment-heading {
   font-size: 20px;
   font-weight: 600;
   margin-top: 30px;
 }
 
-.postReplies{
+.postReplies {
   width: 95vw;
   padding: 10px 20px;
   background-color: #ced4da;
@@ -178,3 +179,33 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.createPage form {
+  display: flex;
+  flex-direction: column;
+}
+
+.createPage input {
+  margin-bottom: 18px;
+  width: 95vw;
+  height: 30px;
+  font-size: 15px;
+}
+
+.createPage button {
+  width: 120px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.error-message {
+  padding: 10px 20px;
+  width: fit-content;
+  background-color: rgb(226, 59, 59);
+  margin: 10px;
+}
+
+.button-row {
+  display: flex;
+  gap: 15px;
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import supabase from "../config/supaBaseClient"
-import { Navigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const Create = () => {
 
@@ -11,6 +11,7 @@ const Create = () => {
     const [imageSrc, setImageSrc] = useState("")
     const [formError, setFormError] = useState(null)
 
+    const navigate = useNavigate()
 
 
     const handleSubmit = async (e) => {
@@ -39,7 +40,7 @@ const Create = () => {
         if (data) {
             setFormError(null)
         }
-        Navigate("/")
+        navigate("/")
 
     }
 
@@ -59,9 +60,13 @@ const Create = () => {
                 <label htmlFor="imageSrc">Enter image link:</label>
                 <input type="text" name="post image" value={imageSrc} id="imageSrc" onChange={(e) => setImageSrc(e.target.value)} />
 
-                <p>{formError}</p>
+                {formError && (<p className="error-message">{formError}</p>)}
 
-                <button>Add Post</button>
+                <div className="button-row">
+                    <button>Add Post</button>
+                    <button onClick={() => { navigate("/") }}>Return Home</button>
+                </div>
+
             </form>
         </div>
     )
