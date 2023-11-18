@@ -134,7 +134,7 @@ const PostDetail = () => {
 
                     <div className="postRepliesContainer">
                         <div className="comment-heading">Comments</div>
-                        {(!post.replies) && (
+                        {(post.replies.length === 0) && (
                             "No Replies 😓"
                         )}
                         {(post.replies) && (post.replies.map((reply, index) => {
