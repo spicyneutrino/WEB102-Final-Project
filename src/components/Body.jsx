@@ -29,7 +29,6 @@ const Body = ({ posts, setOrderBy, setIsAscending }) => {
                             <option value="postTitle">Post Title</option>
                             <option value="createTime">Date</option>
                             <option value="upvotes">Upvotes</option>
-                            <option value="replies">Replies</option>
                         </select>
                     </label>
                     <button>Sort</button>
