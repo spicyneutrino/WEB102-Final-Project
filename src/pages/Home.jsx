@@ -14,12 +14,15 @@ const Home = () => {
     const [posts, setPosts] = useState(null)
     const [copyPosts, setCopyPosts] = useState(null)
     const [fetchError, setFetchError] = useState(null)
+    const [orderBy, setOrderBy] = useState("postID")
+    const [isAscending, setIsAscending] = useState(true)
 
     useEffect(() => {
         const fetchData = async () => {
             const { data, error } = await supabase
                 .from("posts")
                 .select()
+                .order(orderBy, { "ascending": isAscending })
 
             console.log(data)
             console.log(error)
@@ -36,12 +39,12 @@ const Home = () => {
             }
         }
         fetchData()
-    }, [])
+    }, [orderBy, isAscending])
 
     return (
         <div>
-            <Header posts={posts} copyPosts = {copyPosts} setPosts = {setPosts} setCopyPosts = {setCopyPosts}/>
-            <Body posts={copyPosts} />
+            <Header posts={posts} copyPosts={copyPosts} setPosts={setPosts} setCopyPosts={setCopyPosts} />
+            <Body posts={copyPosts} setIsAscending={setIsAscending} setOrderBy={setOrderBy} />
         </div>
     )
 }
