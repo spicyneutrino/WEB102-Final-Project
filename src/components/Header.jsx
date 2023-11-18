@@ -24,9 +24,9 @@ const Header = ({ posts, copyPosts, setPosts, setCopyPosts }) => {
 
     return (
         <>
-            <nav>
+            <nav className="header">
                 <div className="brand-name">TALK4UM</div>
-                <form onSubmit={handleSearch}>
+                <form onSubmit={handleSearch} className = "searchBar-Btn">
                     <input type="text" placeholder="Search" onChange={(e) => { setSearchTerm(e.target.value) }}></input>
                     <button>🔍</button>
                 </form>
