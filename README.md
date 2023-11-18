@@ -2,7 +2,7 @@
 
 Submitted by: **Kavya Gautam**
 
-This web app: **can help user create posts, change and delete them, comment, view other posts, search and sort them.
+This web app: **can help user create posts, change and delete them, comment, view other posts, search and sort them.**
 
 Time spent: **10** hours spent in total
 
@@ -40,8 +40,7 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![](https://github.com/spicyneutrino/WEB102-Final-Project/blob/main/web102_finalProjectGIF.gif)
 
 
 [ScreenToGif](https://www.screentogif.com/) for Windows
