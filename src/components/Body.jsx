@@ -36,6 +36,8 @@ const Body = ({ posts, setOrderBy, setIsAscending }) => {
                 </form>
                 <button onClick={handleAscending}>Reverse</button>
             </div>
+            <br />
+            <div className="postBlockContainer">
             {posts.map((post) => {
                 return (
                     <NavLink to={`/info/${post.postID}`} key={post.postID} >
@@ -43,6 +45,7 @@ const Body = ({ posts, setOrderBy, setIsAscending }) => {
                     </NavLink>
                 )
             })}
+            </div>
         </div >
     )
 }

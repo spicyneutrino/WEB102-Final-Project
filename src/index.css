@@ -28,6 +28,7 @@ body {
   justify-content: space-around;
   height: 35px;
   background-color: #f1faee;
+  margin-bottom: 15px;
 }
 
 .header .brand-name {
@@ -79,10 +80,18 @@ a:hover {
 
 /* post block  */
 
+.postBlockContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .post-container {
   display: flex;
   flex-direction: column;
-  width: 70vw;
+  /* width: 97vw; */
   padding: 10px;
   padding-bottom: 15px;
   background-color: #caf0f8;
@@ -97,7 +106,7 @@ a:hover {
 }
 
 .post-block-title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   text-align: center;
 }
@@ -106,7 +115,7 @@ a:hover {
 .postDetailPage {
   display: flex;
   flex-direction: column;
-  width: 99w;
+  width: 99vw;
 }
 
 .postDetailTopRow {
