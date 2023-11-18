@@ -20,20 +20,22 @@ const Body = ({ posts, setOrderBy, setIsAscending }) => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSortChange} >
-                <label htmlFor="sortBy">Sort by </label>
-                <select onChange={(e) => { setOrder(e.target.value) }} id="sortBy">
-                    <option value="postID">Post ID</option>
-                    <option value="postTitle">Post Title</option>
-                    <option value="createTime">Date</option>
-                    <option value="upvotes">Upvotes</option>
-                    <option value="replies">Replies</option>
-                </select>
-                <button>Sort</button>
-            </form>
-            <button onClick={handleAscending}>Reverse</button>
-
+        <div className="body-jsx">
+            <div className="sort-area">
+                <form onSubmit={handleSortChange} >
+                    <label htmlFor="sortBy"><span>Sort By </span>
+                        <select onChange={(e) => { setOrder(e.target.value) }} id="sortBy">
+                            <option value="postID">Post ID</option>
+                            <option value="postTitle">Post Title</option>
+                            <option value="createTime">Date</option>
+                            <option value="upvotes">Upvotes</option>
+                            <option value="replies">Replies</option>
+                        </select>
+                    </label>
+                    <button>Sort</button>
+                </form>
+                <button onClick={handleAscending}>Reverse</button>
+            </div>
             {posts.map((post) => {
                 return (
                     <NavLink to={`/info/${post.postID}`} key={post.postID} >

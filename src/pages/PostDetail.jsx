@@ -98,9 +98,9 @@ const PostDetail = () => {
 
             {post && (
 
-                <div className="page">
+                <div className="postDetailPage">
                     <div className="postDetailTopRow">
-                        <div>
+                        <div className="flexbox">
                             <h1>{post.postTitle}</h1>
                             <h2>{post.userName}</h2>
                             <div>
@@ -115,7 +115,7 @@ const PostDetail = () => {
                     </div>
 
                     <div className="buttonRow">
-                        <button onClick={handleUpvotes}>⬆️</button>
+                        <button onClick={handleUpvotes} className="BtnEmoji">⬆️</button>
                         <button onClick={() => { navigate(`/update/${id}`) }} className="updatePost">Update Post</button>
                         <button onClick={handleDelete} className="delete-post">Delete Post</button>
                         <button onClick={() => { navigate("/") }}>Return Home</button>
@@ -133,6 +133,7 @@ const PostDetail = () => {
                     </div>
 
                     <div className="postRepliesContainer">
+                        <div className="comment-heading">Comments</div>
                         {(!post.replies) && (
                             "No Replies 😓"
                         )}
