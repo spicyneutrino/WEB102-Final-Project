@@ -15,7 +15,10 @@ const PostBlock = ({ post }) => {
             </div>
             <div className="upvoteTitle">
                 <div className="upvotes">
-                    {`${post.upvotes} votes`}
+                    {`${post.upvotes} upvotes`}
+                </div>
+                <div>
+                    {`${post.replies.length} replies`}
                 </div>
                 <div className="post-block-title">
                     {post.postTitle}
